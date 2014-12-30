@@ -23,7 +23,7 @@ mmh3--murmur3 hash package
 printout structure:
 
 
-
+```
 [root@cos89 ~]# cd COSGoidDIR/
 [root@cos89 COSGoidDIR]# ll
 total 1376
@@ -40,3 +40,4 @@ list_0   list_13  list_18  list_22  list_27  list_31  list_36  list_40  list_9
 list_1   list_14  list_19  list_23  list_28  list_32  list_37  list_5   list_comb
 list_10  list_15  list_2   list_24  list_29  list_33  list_38  list_6   list_disorder
 list_11  list_16  list_20  list_25  list_3   list_34  list_39  list_7
+```
