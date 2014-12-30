@@ -22,6 +22,8 @@ mmh3--murmur3 hash package
 
 printout structure:
 
+
+
 [root@cos89 ~]# cd COSGoidDIR/
 [root@cos89 COSGoidDIR]# ll
 total 1376
