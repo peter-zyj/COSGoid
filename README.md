@@ -3,7 +3,8 @@ COSGoid
 
 one tool for the orpahned Goid fetch with high speed and efficiency
 
-
+Description
+====
 cserver hold all the Goids within internal tables including the Good Goids and Orphaned Goids.
 the definition of "Orphaned" Goids is the goids locate in the Cserver only , not in DB dedicated 3rd party Application. Exp:Cassandra
 
@@ -14,14 +15,16 @@ in the CD fetch very very slow, especially for cassandra 2.1, should be cqlsh co
 this tool use multiple processes to reduce the pressure of single request to DB, which improve the efficiency and time saving.
 
 usage:
+=======
 python COSGoid.py
 
 
 Requisite module:
+=======
 mmh3--murmur3 hash package
 
 printout structure:
-
+=======
 
 ```
 [root@cos89 ~]# cd COSGoidDIR/
