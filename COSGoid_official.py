@@ -70,7 +70,7 @@ def fileUntilReady(file, wTime):
             time.sleep(wTime)
             p1 = os.popen("ls -s %s | awk '{print $1}'" % (file)).read()
             #print "p1",p1
-            if p == p1:
+            if p == p1 and p.strip() != '0':
                 break
     else:
         return False
@@ -81,11 +81,11 @@ def fileUntilReady(file, wTime):
 def fileReady(file, wTime=1):
     if os.path.exists(file):
         p = os.popen("ls -s %s | awk '{print $1}'" % (file)).read()
-        # print "p",p
+        #print "p",p
         time.sleep(wTime)
         p1 = os.popen("ls -s %s | awk '{print $1}'" % (file)).read()
         #print "p1",p1
-        if p == p1:
+        if p == p1 and p.strip() != "0":
             return True
         else:
             return False
@@ -109,9 +109,9 @@ def dirReady(folder, wTime=1):
 
 
 def CassandraHandleFork(index, preGoid, sufGoid):
-    print preGoid
-    print sufGoid
-    print index
+    # print preGoid
+    # print sufGoid
+    # print index
     cmd1 = 'cqlsh -e "SELECT goid from cos.goid where token(goid) < %s and token(goid) >= %s" > /root/COSGoidDIR/db/list_tmp_%s' % (sufGoid, preGoid, index)
     print cmd1
     os.popen(cmd1)
@@ -205,7 +205,7 @@ def execute():
             boundaryList = []
             os.popen("awk '{if(NR%1000==0){print}}END{print}' /root/COSGoidDIR/tokeninfo > /root/COSGoidDIR/boundryFile")
             boundaryList = open('/root/COSGoidDIR/boundryFile', 'r').read().strip().split()
-            print boundaryList
+            # print boundaryList
 
             for index in range(len(boundaryList)):
                 if index == 0:
